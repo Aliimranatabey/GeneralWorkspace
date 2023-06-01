@@ -43,7 +43,4 @@ public class CustomerService {
         customerRepository.deleteById(id);
     }
 
-    // public Customer getByCharacter(){
-    // return customerRepository.characterQuery();
-    // }
 }

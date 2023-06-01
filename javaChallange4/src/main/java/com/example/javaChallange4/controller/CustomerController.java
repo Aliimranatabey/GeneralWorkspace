@@ -32,6 +32,11 @@ public class CustomerController {
         return customerService.getAll();
     }
 
+    @GetMapping("/getById")
+    public Customer getById(@RequestParam("id") UUID id) {
+        return customerService.getById(id);
+    }
+
     @GetMapping("character")
     public List<Object[]> getCustomersAndOrderIdsByKeyword(@RequestParam("value") String value) {
         return customerService.getCustomersAndOrderIdsByKeyword(value);
@@ -40,11 +45,6 @@ public class CustomerController {
     @GetMapping("nullOrder")
     public List<Customer> getCustomersWithoutOrders() {
         return customerService.getCustomersWithoutOrders();
-    }
-
-    @GetMapping("/getById")
-    public Customer getById(@RequestParam("id") UUID id) {
-        return customerService.getById(id);
     }
 
     @PostMapping("")

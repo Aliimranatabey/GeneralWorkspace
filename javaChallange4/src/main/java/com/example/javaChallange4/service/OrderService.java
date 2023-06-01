@@ -17,13 +17,13 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
+    public List<Order> getOrdersAfterDate(String startDate) {
+        return orderRepository.findOrdersAfterDate(startDate);
+    }
+
     public Order getById(UUID id) {
         return orderRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Couldn't found company " + id.toString()));
-    }
-
-    public List<Order> getOrdersAfterDate(String startDate) {
-        return orderRepository.findOrdersAfterDate(startDate);
     }
 
     public Order add(Order order) {
