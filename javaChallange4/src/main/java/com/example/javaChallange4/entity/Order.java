@@ -2,7 +2,6 @@ package com.example.javaChallange4.entity;
 
 import java.util.Date;
 import java.util.UUID;
-import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.rest.core.annotation.RestResource;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;
@@ -27,7 +26,6 @@ public class Order {
 
     @Id
     @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "id")
     private UUID id;
 
